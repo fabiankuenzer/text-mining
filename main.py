@@ -30,8 +30,8 @@ print('VECTORIZATION: SUCCESS')
 print('')
 
 print('SET ANALYSIS PARAMETERS: START')
-number_of_topics_to_extract = 3
-number_of_top_words_per_topic = 5
+number_of_topics_to_extract = int(input('Enter number of topics to extract: '))
+number_of_top_words_per_topic = int(input('Enter number of most important words to extract per topic: '))
 print('SET ANALYSIS PARAMETERS: SUCCESS')
 print('')
 
