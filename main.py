@@ -9,7 +9,7 @@ nltk.download('stopwords')
 
 print('IMPORTING AND EXTRACTING DATA: START')
 raw_data = pd.read_csv('data/comcast.csv')
-corpus = list(raw_data['text'][0:10])
+corpus = list(raw_data['text'])
 print('IMPORTING AND EXTRACTING DATA: SUCCESS')
 
 print('PREPARING DATA FOR ANALYSIS: START')
