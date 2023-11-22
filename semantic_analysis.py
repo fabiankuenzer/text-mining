@@ -1,9 +1,5 @@
 import numpy as np
-import nltk
-from nltk.corpus import stopwords
 from sklearn.decomposition import TruncatedSVD, LatentDirichletAllocation
-
-nltk.download('stopwords')
 
 
 def truncated_svd_document_topic_relevance(vectors, number_of_topics):
@@ -48,11 +44,3 @@ def print_share_of_documents_per_topic(list_of_documents_per_topic):
     total_document_count = sum(list_of_documents_per_topic)
     for index, document_count in enumerate(list_of_documents_per_topic):
         print("Share of documents assigned to topic", index, ":", round(document_count/total_document_count*100, 2), "%")
-
-
-def get_stopwords_excluding(list_of_stopwords_to_exclude):
-    stopword_list = stopwords.words('english')
-    print(type(stopword_list))
-    for word in list_of_stopwords_to_exclude:
-        stopword_list.remove(word)
-    return stopword_list
