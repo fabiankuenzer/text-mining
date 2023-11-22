@@ -3,7 +3,6 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer, LancasterStemmer
 
-nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt')
 
@@ -36,8 +35,3 @@ def lemmatization(document):
     result = list(map(lambda word: stemmer.stem(word) if word.endswith("ing") else lemmatizer.lemmatize(word), words))
     lemmatized_document = ' '.join(result)
     return lemmatized_document
-
-
-def remove_words_from_nltk_stopwords(stopwords, words_to_remove):
-    customized_stopwords = [word for word in stopwords if word not in words_to_remove]
-    return customized_stopwords
