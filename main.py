@@ -1,7 +1,10 @@
 import pandas as pd
+from nltk.corpus import stopwords
 from vectorization import *
 from semantic_analysis import *
 from preprocessing import *
+
+nltk.download('stopwords')
 
 
 print('IMPORTING AND EXTRACTING DATA: START')
@@ -11,6 +14,8 @@ print('IMPORTING AND EXTRACTING DATA: SUCCESS')
 
 print('PREPARING DATA FOR ANALYSIS: START')
 custom_stopwords = stopwords.words('english')
+custom_stopwords.extend(["n't", "'m", "w/", "'d", "'s", "min", "00", "3rd", "4th", "49.99", "19.99"])
+custom_stopwords.extend([str(number) for number in range(0, 5000)])
 # custom_stopwords = remove_words_from_nltk_stopwords(stopwords, ['does', 'do', 'no', 'not'])
 # Todo - add n't 'm to custom_stopwords with respective function
 filtered_corpus = [remove_stopwords(document, custom_stopwords) for document in corpus]
