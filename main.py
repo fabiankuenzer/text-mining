@@ -41,7 +41,8 @@ lsa_count_document_topic_relevance, lsa_count_topics = truncated_svd_document_to
 extract_topics_and_most_important_keywords(lsa_count_topics, count_feature_names, number_of_top_words_per_topic)
 # get_topics_and_relevance(lsa_count_document_topic_relevance)
 print('Topic distribution:')
-print(get_topic_distribution(lsa_count_document_topic_relevance, number_of_topics_to_extract))
+lsa_count_number_of_documents_per_topic = get_topic_distribution(lsa_count_document_topic_relevance, number_of_topics_to_extract)
+print_share_of_documents_per_topic(lsa_count_number_of_documents_per_topic)
 print('')
 
 print("---LSA with TF-IDF vectorization---")
@@ -50,7 +51,8 @@ lsa_tfidf_document_topic_relevance, lsa_tfidf_topics = truncated_svd_document_to
 extract_topics_and_most_important_keywords(lsa_tfidf_topics, tfidf_feature_names, number_of_top_words_per_topic)
 # get_topics_and_relevance(lsa_tfidf_document_topic_relevance)
 print('Topic distribution:')
-print(get_topic_distribution(lsa_tfidf_document_topic_relevance, number_of_topics_to_extract))
+lsa_tfidf_number_of_documents_per_topic = get_topic_distribution(lsa_tfidf_document_topic_relevance, number_of_topics_to_extract)
+print_share_of_documents_per_topic(lsa_tfidf_number_of_documents_per_topic)
 print('')
 
 print("---LDA with count vectorization---")
@@ -59,7 +61,8 @@ lda_count_document_topic_relevance, lda_count_topics = latent_dirichlet_allocati
 extract_topics_and_most_important_keywords(lda_count_topics, count_feature_names, number_of_top_words_per_topic)
 # get_topics_and_relevance(lda_count_document_topic_relevance)
 print('Topic distribution:')
-print(get_topic_distribution(lda_count_document_topic_relevance, number_of_topics_to_extract))
+lda_count_number_of_documents_per_topic = get_topic_distribution(lda_count_document_topic_relevance, number_of_topics_to_extract)
+print_share_of_documents_per_topic(lda_count_number_of_documents_per_topic)
 print('')
 
 print("---LDA with TF-IDF vectorization---")
@@ -68,5 +71,6 @@ lda_tfidf_document_topic_relevance, lda_tfidf_topics = latent_dirichlet_allocati
 extract_topics_and_most_important_keywords(lda_tfidf_topics, tfidf_feature_names, number_of_top_words_per_topic)
 # get_topics_and_relevance(lda_tfidf_document_topic_relevance)
 print('Topic distribution:')
-print(get_topic_distribution(lda_tfidf_document_topic_relevance, number_of_topics_to_extract))
+lda_tfidf_number_of_documents_per_topic = get_topic_distribution(lda_tfidf_document_topic_relevance, number_of_topics_to_extract)
+print_share_of_documents_per_topic(lda_tfidf_number_of_documents_per_topic)
 print('')

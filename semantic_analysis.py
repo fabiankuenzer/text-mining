@@ -44,6 +44,12 @@ def get_topic_distribution(document_topic_relevance, n_topics):
     return topic_distribution
 
 
+def print_share_of_documents_per_topic(list_of_documents_per_topic):
+    total_document_count = sum(list_of_documents_per_topic)
+    for index, document_count in enumerate(list_of_documents_per_topic):
+        print("Share of documents assigned to topic", index, ":", round(document_count/total_document_count*100, 2), "%")
+
+
 def get_stopwords_excluding(list_of_stopwords_to_exclude):
     stopword_list = stopwords.words('english')
     print(type(stopword_list))
