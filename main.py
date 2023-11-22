@@ -24,8 +24,8 @@ print(lemmatized_corpus[:3])
 print('')
 
 print('VECTORIZATION: START')
-count_vectors, count_feature_names = count_vectorization(corpus_without_punctuation, (1, 3))
-tfidf_vectors, tfidf_feature_names = tfidf_vectorization(corpus_without_punctuation, (1, 3))
+count_vectors, count_feature_names = count_vectorization(corpus_without_punctuation, (1, 4))
+tfidf_vectors, tfidf_feature_names = tfidf_vectorization(corpus_without_punctuation, (1, 4))
 print('VECTORIZATION: SUCCESS')
 print('')
 
