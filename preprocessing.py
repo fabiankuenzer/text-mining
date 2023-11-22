@@ -39,5 +39,5 @@ def lemmatization(document):
 
 
 def remove_words_from_nltk_stopwords(stopwords, words_to_remove):
-    customized_stopwords = [word for word in stopwords.words('english') if word not in words_to_remove]
+    customized_stopwords = [word for word in stopwords if word not in words_to_remove]
     return customized_stopwords
