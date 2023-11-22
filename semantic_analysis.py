@@ -23,13 +23,6 @@ def latent_dirichlet_allocation_document_topic_relevance(vectors, number_of_topi
     return document_topic_relevance, topics
 
 
-def get_topics_and_relevance(document_topic_relevance):
-    for document_index, document in enumerate(document_topic_relevance):
-        for topic_index, topic_relevance in enumerate(document):
-            print("Topic ", topic_index, ": ", topic_relevance * 100, "%")
-        print('')
-
-
 def get_topic_distribution(document_topic_relevance, n_topics):
     most_important_topics = []
     topic_distribution = []
@@ -43,4 +36,4 @@ def get_topic_distribution(document_topic_relevance, n_topics):
 def print_share_of_documents_per_topic(list_of_documents_per_topic):
     total_document_count = sum(list_of_documents_per_topic)
     for index, document_count in enumerate(list_of_documents_per_topic):
-        print("Share of documents assigned to topic", index, ":", round(document_count/total_document_count*100, 2), "%")
+        print("Share of documents assigned to topic", index+1, ":", round(document_count/total_document_count*100, 2), "%")
