@@ -23,9 +23,6 @@ corpus_without_punctuation = [remove_punctuation(document) for document in lower
 lemmatized_corpus = [lemmatization(document) for document in corpus_without_punctuation]
 print('PREPARING DATA FOR ANALYSIS: SUCCESS')
 print('')
-print('FINAL CORPUS SAMPLE')
-print(lemmatized_corpus[:3])
-print('')
 
 print('VECTORIZATION: START')
 count_vectors, count_feature_names = count_vectorization(lemmatized_corpus, (1, 4))
