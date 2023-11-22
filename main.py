@@ -17,7 +17,6 @@ custom_stopwords = stopwords.words('english')
 custom_stopwords.extend(["n't", "'m", "w/", "'d", "'s", "min", "00", "3rd", "4th", "49.99", "19.99"])
 custom_stopwords.extend([str(number) for number in range(0, 5000)])
 # custom_stopwords = remove_words_from_nltk_stopwords(stopwords, ['does', 'do', 'no', 'not'])
-# Todo - add n't 'm to custom_stopwords with respective function
 filtered_corpus = [remove_stopwords(document, custom_stopwords) for document in corpus]
 lowercase_corpus = [lowercase_tokens(document) for document in filtered_corpus]
 corpus_without_punctuation = [remove_punctuation(document) for document in lowercase_corpus]
