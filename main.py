@@ -1,5 +1,7 @@
 import pandas as pd
 from nltk.corpus import stopwords
+from gensim.models import Word2Vec
+from semantic_context import get_semantic_context
 from vectorization import *
 from semantic_analysis import *
 from preprocessing import *
@@ -73,3 +75,10 @@ print('Topic distribution:')
 lda_tfidf_number_of_documents_per_topic = get_topic_distribution(lda_tfidf_document_topic_relevance, number_of_topics_to_extract)
 print_share_of_documents_per_topic(lda_tfidf_number_of_documents_per_topic)
 print('')
+
+print("---Explore words that are used in a similar semantic context as the given topic---")
+print("TRAIN MODEL: START")
+tokenized_corpus = [word_tokenize(doc) for doc in lemmatized_corpus]
+word2vec_model = Word2Vec(tokenized_corpus)
+print("TRAIN MODEL: SUCCESS")
+get_semantic_context(word2vec_model)
