@@ -27,8 +27,8 @@ print('PREPARING DATA FOR ANALYSIS: SUCCESS')
 print('')
 
 print('VECTORIZATION: START')
-count_vectors, count_feature_names = count_vectorization(lemmatized_corpus, (1, 3))
-tfidf_vectors, tfidf_feature_names = tfidf_vectorization(lemmatized_corpus, (1, 3))
+count_vectors, count_feature_names = count_vectorization(lemmatized_corpus, (1, 1))
+tfidf_vectors, tfidf_feature_names = tfidf_vectorization(lemmatized_corpus, (1, 1))
 print('VECTORIZATION: SUCCESS')
 print('')
 
