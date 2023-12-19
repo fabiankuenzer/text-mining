@@ -3,6 +3,7 @@ from nltk.corpus import stopwords
 from vectorization import *
 from semantic_analysis import *
 from preprocessing import *
+from domain_specific_stopwords import domain_specific_stopwords
 
 nltk.download('stopwords')
 
@@ -15,8 +16,9 @@ print('IMPORTING AND EXTRACTING DATA: SUCCESS')
 print('PREPARING DATA FOR ANALYSIS: START')
 custom_stopwords = stopwords.words('english')
 custom_stopwords.extend(["n't", "'m", "w/", "'d", "'s", "min", "00", "3rd", "4th", "49.99", "19.99", "50.00", "comcast",
-                         "mbps", "since", "one", "rep", "would", "really", "bla", "my", "mr"])
+                         "mbps", "since", "one", "rep", "would", "really", "bla", "my", "mr", "08"])
 custom_stopwords.extend([str(number) for number in range(0, 5000)])
+custom_stopwords.extend(domain_specific_stopwords)
 filtered_corpus = [remove_stopwords(document, custom_stopwords) for document in corpus]
 lowercase_corpus = [lowercase_tokens(document) for document in filtered_corpus]
 corpus_without_punctuation = [remove_punctuation(document) for document in lowercase_corpus]
